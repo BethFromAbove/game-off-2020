@@ -8,7 +8,8 @@ public class GameSceneController : MonoBehaviour
     public int canvasSize;
     public GameObject cellPrefab;
 
-    int determineCellCount(float cellScale) {
+    int DetermineCellCount(float cellScale)
+    {
         return (int) Math.Ceiling(canvasSize / cellScale);
     }
 
@@ -16,7 +17,7 @@ public class GameSceneController : MonoBehaviour
     {
         // Determine the sizes and ofssets of the cells
         float cellScale = cellPrefab.transform.localScale.x;
-        int cellCount = determineCellCount(cellScale);
+        int cellCount = DetermineCellCount(cellScale);
         float offsetX = - (canvasSize / 2) + (cellScale / 2);
         float offsetY = - (canvasSize / 2) + (cellScale / 2);
 

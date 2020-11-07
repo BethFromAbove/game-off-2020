@@ -9,27 +9,37 @@ public class CellController : MonoBehaviour
     
     SpriteRenderer SpriteRenderer;
 
-    public void Awake() {
+    public void Awake()
+    {
         SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         SpriteRenderer.color = TRANSPARENT;
     }
 
-    private Color randomColor() {
+    private Color RandomColor()
+    {
         return UnityEngine.Random.ColorHSV(0, 1, 1, 1, 0, 1, 0.3f, 0.5f);
     }
 
-    private void paint() {
+    private void Paint()
+    {
         SpriteRenderer.color = BLACK;
     }
 
-    private void erase() {
+    private void Erase()
+    {
         SpriteRenderer.color = TRANSPARENT;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player") {
-            paint();
+            PlayerMovement pm = other.GetComponent<PlayerMovement>();
+
+            if (pm.isPainting()) {
+                Paint();
+            } else if (pm.isErasing()) {
+                Erase();
+            }
         }
     }
 }
