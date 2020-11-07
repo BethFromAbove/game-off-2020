@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cell
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 1994705223
+    locked: 0
+  - name: Drawing
+    uniqueID: 3008064641
     locked: 0
   - name: Default
     uniqueID: 0

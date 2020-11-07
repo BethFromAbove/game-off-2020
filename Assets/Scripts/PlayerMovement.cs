@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
 	public Camera cam1;
 	public Camera cam2;
 	private bool zoomedIn;
+    public bool isPainting = false;
+    public bool isErasing = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         cam1.enabled = true;
@@ -17,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
         zoomedIn = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("space")) {
@@ -34,10 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     void WalkHandler()
     {
-        //input on x (horiz)
         float hAxis = Input.GetAxis("Horizontal");
-
-        //input on y (vert)
         float vAxis = Input.GetAxis("Vertical");
 
         //Movement vector
