@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetKeyDown("escape")) {
-            StopBoth();
+            MenuScene();
         }
 
      	if (zoomedIn)
@@ -86,5 +87,10 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log($"Erasing mode: {currentlyErasing}");
         currentlyErasing = false;
         currentlyPainting = false;
+    }
+
+    public void MenuScene ()
+    {
+    	SceneManager.LoadScene("MenuScene");
     }
 }
